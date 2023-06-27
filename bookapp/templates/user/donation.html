@@ -1,0 +1,38 @@
+{%extends "user/layout.html"%}
+{% block header %}{%endblock%}
+
+{% block content %}
+    
+<div class="content" style="background-color: white;padding:3em">
+    <h5>please complete form to donate</h5>
+  <form action="" method="post">
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+    <input type="hidden" name="userid" value="{% if userdeets%}{{userdeets.user_id}} {%endif%}">
+    <div class="mb-3">
+        <input type="text" name="fullname" value="{% if userdeets%}
+        {{userdeets.user_fullname}}
+        {%endif%}" placeholder="your name">
+    </div>
+    <div class="mb-3">
+        <input type="email" name="email" value="{% if userdeets%}
+        {{userdeets.user_email}}
+        {%endif%}"placeholder="email">
+    </div>
+    <div class="mb-3">
+        <input type="number" name="amount" placeholder="amount">
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-outline-primary"> continue</button>
+    </div>
+
+
+
+
+
+  </form>
+{%endblock%}
+
+{% block morecontent %}{% endblock morecontent%} 
+{% block featured %}{%endblock%}
+
+ 
